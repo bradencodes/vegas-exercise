@@ -2,26 +2,30 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../styles/main.css';
 
+import HotelDetails from './HotelDetails';
+
 const App = () => {
-  const [currentHotel, setCurrentHotel] = useState(null);
-  const [hotels, setHotels] = useState(null);
+  const [hotel, setHotel] = useState('venetian');
+  const [allHotels, setAllHotels] = useState([]);
 
-  useEffect(async () => {
-    const allHotels = await axios.get('http://localhost:8888/api/hotels');
+  useEffect(() => {
+    const fetchData = async () => {
+      const url = 'http://localhost:8888/api/hotels';
+      const res = await axios.get(url);
+      setAllHotels(res.data.list);
 
-    const venetian = await axios.get('http://localhost:8888/api/hotels/venetian');
-  })
+      console.log(res.data.list);
+    };
+
+    fetchData();
+    setTimeout(() => console.log(allHotels), 1000);
+  }, []);
 
   return (
     <div className='App'>
-      <button id='navBack'>SEE ALL LAS VEGAS HOTELS</button>
-      <div className='pageContainer'>
-        <img src='' alt='hotelImage'/>
-        <QuickInfo hotel={currentHotel}>
-
-      </div>
+      <HotelDetails hotel={hotel} allHotels={allHotels} />
     </div>
   );
-}
+};
 
 export default App;
