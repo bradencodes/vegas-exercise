@@ -5,14 +5,26 @@ import '../styles/main.css';
 import HotelDetails from './HotelDetails';
 
 const App = () => {
-  const [hotel, setHotel] = useState('venetian');
-  let allHotels;
+  let hotelName = 'venetian';
+  const [allHotelsObj, setAllHotelsObj] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
-      const url = 'http://localhost:8888/api/hotels';
-      const res = await axios.get(url);
-      allHotels = res.data.list;
+      const res = await axios.get('http://localhost:8888/api/hotels');
+
+      const removeDuplicates = list => {
+        let seen = {};
+        let uniqueList = [];
+        list.forEach(item => {
+          if (!seen[item.code]) uniqueList.push(item);
+          seen[item.code] = true;
+        });
+        return uniqueList;
+      };
+
+      const uniqueList = removeDuplicates(res.data.list);
+      const sortedList = uniqueList.sort((a, b) => a.name > b.name ? 1 : -1);
+      setAllHotelsObj(sortedList);
     };
 
     fetchData();
@@ -20,7 +32,9 @@ const App = () => {
 
   return (
     <div className='App'>
-      <HotelDetails hotel={hotel} allHotels={allHotels} />
+      {allHotelsObj && (
+        <HotelDetails hotelName={hotelName} allHotelsObj={allHotelsObj} />
+      )}
     </div>
   );
 };

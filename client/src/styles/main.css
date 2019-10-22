@@ -344,3 +344,8 @@ template {
   font-size: 1.6rem;
   cursor: pointer;
 }
+.hotelsList {
+  list-style-type: none;
+  padding: 0;
+  background: #efefef;
+}
