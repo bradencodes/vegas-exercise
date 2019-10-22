@@ -3,10 +3,11 @@
   height: 100%;
 
   .quickInfo {
+    display: grid;
     grid-template:
       'name price' auto
       'info price' auto /
-      auto auto;
+      auto  auto;
 
     .name {
       grid-area: name;
@@ -27,7 +28,7 @@
       grid-area: info;
       display: flex;
       font-size: 1.6rem;
-      margin-top: 8px;
+      margin-top: 3px;
 
       .item {
         &::before {
@@ -35,12 +36,31 @@
           font-family: 'vegasIcons';
           margin-right: 3px;
         }
-
         background-color: transparent;
         border: none;
         padding: 0;
         margin: 0 15px 0 0;
         color: @gray;
+      }
+    }
+
+    .price {
+      grid-area: price;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      padding-right: 8px;
+
+      .num {
+        margin: -11px 27px 0 0;
+        font-size: 5.7rem;
+        font-weight: 700;
+        color: @secondary;
+      }
+
+      .label {
+        margin: 3px 0 0 0;
+        font-size: 1.6rem;
       }
     }
   }

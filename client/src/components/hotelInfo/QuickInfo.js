@@ -14,16 +14,22 @@ const QuickInfo = ({ hotelObj }) => {
       <h1 className='name' data-rating={generateStars(hotelObj.starRating)}>
         {hotelObj.name.toUpperCase()}
       </h1>
+
       <aside className='info'>
-        <button className='item' data-icon='&#x2352;'>
+        <p className='item' data-icon='&#x2352;'>
           {hotelObj.location.areaName}
-        </button>
+        </p>
         <p className='item' data-icon='&#x2706;'>
           {hotelObj.phoneNumber}
         </p>
         <p className='item' data-icon='&#x2764;'>
           Best Price Guarantee
         </p>
+      </aside>
+
+      <aside className='price'>
+        <p className='num'>${hotelObj.price}</p>
+        <p className='label'>HOTEL ROOMS FROM</p>
       </aside>
     </div>
   );

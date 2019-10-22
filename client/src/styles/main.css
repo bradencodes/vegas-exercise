@@ -323,6 +323,9 @@ template {
 .App .skeleton {
   background-color: #efefef;
 }
+button {
+  cursor: pointer;
+}
 #navBack::before {
   content: '\2190';
   padding: 2px 2px 0 0;
@@ -346,7 +349,6 @@ template {
   background: none;
   border: none;
   font-size: 1.6rem;
-  cursor: pointer;
 }
 .pageContainer {
   margin: 23px 4px 0 5px;
@@ -379,6 +381,7 @@ template {
   font-size: 1.5rem;
   line-height: 1.5rem;
   margin-bottom: 1.86rem;
+  cursor: pointer;
 }
 .hotelsList li .name {
   color: #895e95;
@@ -394,6 +397,7 @@ template {
   height: 100%;
 }
 .hotelInfo .quickInfo {
+  display: grid;
   grid-template: 'name price' auto 'info price' auto / auto auto;
 }
 .hotelInfo .quickInfo .name {
@@ -413,7 +417,7 @@ template {
   grid-area: info;
   display: flex;
   font-size: 1.6rem;
-  margin-top: 8px;
+  margin-top: 3px;
 }
 .hotelInfo .quickInfo .info .item {
   background-color: transparent;
@@ -426,4 +430,21 @@ template {
   content: attr(data-icon);
   font-family: 'vegasIcons';
   margin-right: 3px;
+}
+.hotelInfo .quickInfo .price {
+  grid-area: price;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 8px;
+}
+.hotelInfo .quickInfo .price .num {
+  margin: -11px 27px 0 0;
+  font-size: 5.7rem;
+  font-weight: 700;
+  color: #f48721;
+}
+.hotelInfo .quickInfo .price .label {
+  margin: 3px 0 0 0;
+  font-size: 1.6rem;
 }
