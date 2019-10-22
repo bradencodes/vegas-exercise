@@ -1,9 +1,27 @@
 .hotelsList {
   list-style-type: none;
-  padding: 0;
+  padding: 22px 14px 0;
   margin: 0;
   background: @light-gray;
 
   grid-column: 1;
   grid-row: 2;
+
+  li {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    margin-bottom: 1.9rem;
+
+    .name {
+      color: @primary;
+    }
+    .price {
+      color: @gray;
+      width: 55px;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
 }

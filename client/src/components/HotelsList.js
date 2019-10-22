@@ -5,8 +5,8 @@ const HotelsList = ({ allHotelsObj }) => {
     <ul className='hotelsList'>
       {allHotelsObj.map(hotel => (
         <li key={hotel.code}>
-          <span>{hotel.name}</span>
-          <span>${hotel.price}</span>
+          <span className='name'>{hotel.name}</span>
+          <span className='price'>${hotel.price}</span>
         </li>
       ))}
     </ul>
