@@ -1,13 +1,55 @@
+#navBack::before {
+  content: '←';
+  padding: 2px 2px 0 0;
+  margin-right: 8px;
+  font-family: 'vegasIcons';
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  color: @white;
+  background: @primary;
+}
+
+#navBack {
+  height: 21px;
+  display: flex;
+  align-items: center;
+  color: @primary;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
 .pageContainer {
-  margin: 23px 9px 0 5px;
+  margin: 23px 4px 0 5px;
+
   display: grid;
-  grid-template-columns: 248px auto;
-  grid-template-rows: 173px auto;
-  grid-column-gap: 27px;
-  grid-row-gap: 30px;
+  grid-gap: 30px;
+
+  grid-template:
+    'pic  info' 173px
+    'list info' auto /
+    248px auto;
 
   img {
-    grid-column: 1;
-    grid-row: 1;
+    grid-area: pic;
+
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  .hotelsList {
+    grid-area: list;
+  }
+
+  .hotelInfo {
+    grid-area: info;
+    margin: -6px 0 0 -3px;
   }
 }

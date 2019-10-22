@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 import HotelsList from './HotelsList';
+import HotelInfo from './hotelInfo/HotelInfo';
 
 const HotelDetails = ({ hotelName, allHotelsObj }) => {
   const [hotelObj, setHotelObj] = useState(null);
@@ -25,9 +26,9 @@ const HotelDetails = ({ hotelName, allHotelsObj }) => {
     <div>
       <button id='navBack'>SEE ALL LAS VEGAS HOTELS</button>
       <div className='pageContainer'>
-        <img src={hotelImageUrl} alt={hotelImageUrl} />
+        <img src={hotelImageUrl} alt={hotelImageUrl} className='skeleton' />
         <HotelsList allHotelsObj={allHotelsObj} />
-        {/* <HotelInfo hotelObj={hotelObj} /> */}
+        <HotelInfo hotelObj={hotelObj} />
       </div>
     </div>
   );
