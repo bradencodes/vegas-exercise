@@ -131,7 +131,10 @@ function handleRequest(req, res) {
         );
       }
 
-      res.writeHead(status, { 'Content-Type': contentType });
+      res.writeHead(status, {
+        'Content-Type': contentType,
+        'Access-Control-Allow-Origin': '*'
+      });
       res.end(r.body);
     });
 }
