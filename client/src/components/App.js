@@ -6,19 +6,16 @@ import HotelDetails from './HotelDetails';
 
 const App = () => {
   const [hotel, setHotel] = useState('venetian');
-  const [allHotels, setAllHotels] = useState([]);
+  let allHotels;
 
   useEffect(() => {
     const fetchData = async () => {
       const url = 'http://localhost:8888/api/hotels';
       const res = await axios.get(url);
-      setAllHotels(res.data.list);
-
-      console.log(res.data.list);
+      allHotels = res.data.list;
     };
 
     fetchData();
-    setTimeout(() => console.log(allHotels), 1000);
   }, []);
 
   return (
