@@ -344,8 +344,23 @@ template {
   font-size: 1.6rem;
   cursor: pointer;
 }
+.pageContainer {
+  margin: 23px 9px 0 5px;
+  display: grid;
+  grid-template-columns: 248px auto;
+  grid-template-rows: 173px auto;
+  grid-column-gap: 27px;
+  grid-row-gap: 30px;
+}
+.pageContainer img {
+  grid-column: 1;
+  grid-row: 1;
+}
 .hotelsList {
   list-style-type: none;
   padding: 0;
+  margin: 0;
   background: #efefef;
+  grid-column: 1;
+  grid-row: 2;
 }
