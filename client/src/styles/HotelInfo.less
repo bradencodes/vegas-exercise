@@ -6,20 +6,42 @@
     grid-template:
       'name price' auto
       'info price' auto /
-      auto  auto;
+      auto auto;
 
     .name {
-      font-size: 3.7rem;
-      color: @gray;
       grid-area: name;
+      font-size: 3.7rem;
+      margin: 0;
+      font-weight: 400;
+      color: @gray;
     }
-
 
     .name::after {
       content: attr(data-rating);
       color: #9999a3;
-      font-size: 2.0rem;
+      font-size: 2rem;
       margin-left: 6px;
+    }
+
+    .info {
+      grid-area: info;
+      display: flex;
+      font-size: 1.6rem;
+      margin-top: 8px;
+
+      .item {
+        &::before {
+          content: attr(data-icon);
+          font-family: 'vegasIcons';
+          margin-right: 3px;
+        }
+
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        margin: 0 15px 0 0;
+        color: @gray;
+      }
     }
   }
 }

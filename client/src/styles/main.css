@@ -324,7 +324,7 @@ template {
   background-color: #efefef;
 }
 #navBack::before {
-  content: '←';
+  content: '\2190';
   padding: 2px 2px 0 0;
   margin-right: 8px;
   font-family: 'vegasIcons';
@@ -397,13 +397,33 @@ template {
   grid-template: 'name price' auto 'info price' auto / auto auto;
 }
 .hotelInfo .quickInfo .name {
-  font-size: 3.7rem;
-  color: #6a6a6a;
   grid-area: name;
+  font-size: 3.7rem;
+  margin: 0;
+  font-weight: 400;
+  color: #6a6a6a;
 }
 .hotelInfo .quickInfo .name::after {
   content: attr(data-rating);
   color: #9999a3;
   font-size: 2rem;
   margin-left: 6px;
+}
+.hotelInfo .quickInfo .info {
+  grid-area: info;
+  display: flex;
+  font-size: 1.6rem;
+  margin-top: 8px;
+}
+.hotelInfo .quickInfo .info .item {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0 15px 0 0;
+  color: #6a6a6a;
+}
+.hotelInfo .quickInfo .info .item::before {
+  content: attr(data-icon);
+  font-family: 'vegasIcons';
+  margin-right: 3px;
 }
