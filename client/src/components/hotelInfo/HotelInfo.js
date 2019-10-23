@@ -9,7 +9,7 @@ const HotelInfo = ({ hotelObj }) => {
   return (
     <>
       {!hotelObj ? (
-        <div className='hotelInfo skeleton' />
+        <div className='hotelInfo' />
       ) : (
         <div className='hotelInfo'>
           <QuickInfo hotelObj={hotelObj} setSelected={setSelected} />
