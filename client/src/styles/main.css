@@ -495,6 +495,16 @@ button {
   white-space: -o-pre-wrap;
   word-wrap: break-word;
 }
+.hotelInfo .tabbedInfo .main dl {
+  margin: 4px 0 22px;
+  line-height: 1.3;
+}
+.hotelInfo .tabbedInfo .main dl dt {
+  font-weight: bold;
+}
+.hotelInfo .tabbedInfo .main dl dd {
+  margin: 0;
+}
 .hotelInfo .tabbedInfo .collapsed {
   max-height: 200px;
 }
@@ -509,7 +519,6 @@ button {
   font-size: 1.76rem;
 }
 .hotelInfo .tabbedInfo .toggle::after {
-  content: '\2193';
   font-family: 'vegasIcons';
   color: #ffffff;
   background-color: #895e95;
@@ -519,4 +528,10 @@ button {
   padding: 2px;
   margin-left: 4px;
   border-radius: 50%;
+}
+.hotelInfo .tabbedInfo .down::after {
+  content: '\2193';
+}
+.hotelInfo .tabbedInfo .up::after {
+  content: '\2191';
 }

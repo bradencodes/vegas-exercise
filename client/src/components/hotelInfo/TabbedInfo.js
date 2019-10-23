@@ -11,6 +11,17 @@ const TabbedInfo = ({ hotelObj }) => {
   const makeMain = () => {
     if (selected === 'description') {
       return <p>{hotelObj.description}</p>;
+    } else if (selected === 'details') {
+      return (
+        <>
+          {hotelObj.details.map(detail => (
+            <dl>
+              <dt className='label'>{detail.label}:</dt>
+              <dd className='value'>{detail.value}</dd>
+            </dl>
+          ))}
+        </>
+      );
     }
   };
 
@@ -18,8 +29,7 @@ const TabbedInfo = ({ hotelObj }) => {
     if (selected === 'description') {
       if (isCollapsed) return 'SHOW FULL DESCRIPTION';
       else return 'HIDE FULL DESCRIPTION';
-    }
-    if (selected === 'details') {
+    } else if (selected === 'details') {
       if (isCollapsed) return 'VIEW MORE DETAILS';
       else return 'VIEW FEWER DETAILS';
     }
@@ -51,7 +61,10 @@ const TabbedInfo = ({ hotelObj }) => {
         {makeMain()}
       </main>
       {selected !== 'location' && (
-        <button className='toggle' onClick={toggleIsCollapsed}>
+        <button
+          className={`toggle ${isCollapsed ? 'down' : 'up'}`}
+          onClick={toggleIsCollapsed}
+        >
           {makeToggleText()}
         </button>
       )}

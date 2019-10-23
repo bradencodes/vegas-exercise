@@ -115,6 +115,19 @@
         white-space: -o-pre-wrap;
         word-wrap: break-word;
       }
+
+      dl {
+        margin: 4px 0 22px;
+        line-height: 1.3;
+
+        dt {
+          font-weight: bold;
+        }
+
+        dd {
+          margin: 0;
+        }
+      }
     }
 
     .collapsed {
@@ -132,7 +145,6 @@
       font-size: 1.76rem;
 
       &::after {
-        content: '\2193';
         font-family: 'vegasIcons';
         color: @white;
         background-color: @primary;
@@ -142,6 +154,18 @@
         padding: 2px;
         margin-left: 4px;
         border-radius: 50%;
+      }
+    }
+
+    .down {
+      &::after {
+        content: '\2193';
+      }
+    }
+
+    .up {
+      &::after {
+        content: '\2191';
       }
     }
   }
