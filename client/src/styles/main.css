@@ -477,7 +477,15 @@ button {
   border-bottom: #895e95 4px solid;
   cursor: pointer;
 }
+.hotelInfo .tabbedInfo .tabs .tab:hover {
+  border-bottom: rgba(255, 255, 255, 0.6) 4px solid;
+  opacity: 0.95;
+}
 .hotelInfo .tabbedInfo .tabs .selected {
+  border-bottom: #733080 4px solid;
+  opacity: 0.95;
+}
+.hotelInfo .tabbedInfo .tabs .selected:hover {
   border-bottom: #733080 4px solid;
   opacity: 0.95;
 }

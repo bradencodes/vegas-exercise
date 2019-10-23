@@ -91,11 +91,21 @@
         font-size: 2rem;
         border-bottom: @purple 4px solid;
         cursor: pointer;
+
+        &:hover {
+          border-bottom: rgba(255, 255, 255, .60) 4px solid;
+          opacity: 0.95;
+        }
       }
 
       .selected {
         border-bottom: @dark-purple 4px solid;
         opacity: 0.95;
+
+        &:hover {
+          border-bottom: @dark-purple 4px solid;
+          opacity: 0.95;
+        }
       }
     }
 
