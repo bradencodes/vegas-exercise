@@ -23,7 +23,7 @@ const App = () => {
       };
 
       const uniqueList = removeDuplicates(res.data.list);
-      const sortedList = uniqueList.sort((a, b) => a.name > b.name ? 1 : -1);
+      const sortedList = uniqueList.sort((a, b) => a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1);
       setAllHotelsObj(sortedList);
     };
 

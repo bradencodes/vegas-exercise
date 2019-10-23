@@ -10,7 +10,7 @@ const HotelsList = ({ allHotelsObj }) => {
           {allHotelsObj.map(hotel => (
             <li key={hotel.code}>
               <span className='name'>{hotel.name}</span>
-              <span className='price'>${hotel.price}</span>
+              <span className='price'>${hotel.price.toFixed(2)}</span>
             </li>
           ))}
         </ul>
