@@ -541,6 +541,9 @@ button {
   color: #895e95;
   font-size: 1.76rem;
 }
+.hotelInfo .tabbedInfo .toggle:hover {
+  border-bottom: 1px solid #895e95;
+}
 .hotelInfo .tabbedInfo .toggle::after {
   font-family: 'vegasIcons';
   color: #ffffff;

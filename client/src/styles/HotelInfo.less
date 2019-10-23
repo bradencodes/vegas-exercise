@@ -22,7 +22,7 @@
       font-family: 'vegasIcons';
       color: #9999a3;
       font-size: 1.5rem;
-      letter-spacing: .2rem;
+      letter-spacing: 0.2rem;
       margin-left: 6px;
     }
 
@@ -93,7 +93,7 @@
         cursor: pointer;
 
         &:hover {
-          border-bottom: rgba(255, 255, 255, .60) 4px solid;
+          border-bottom: rgba(255, 255, 255, 0.6) 4px solid;
           opacity: 0.95;
         }
       }
@@ -142,7 +142,6 @@
       }
 
       .address {
-
         &::before {
           content: '\2352';
           font-family: 'vegasIcons';
@@ -170,6 +169,10 @@
       border: 0;
       color: @primary;
       font-size: 1.76rem;
+
+      &:hover {
+        border-bottom: 1px solid @primary;
+      }
 
       &::after {
         font-family: 'vegasIcons';
