@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const TabbedInfo = ({ hotelObj }) => {
-  let selected = 'description';
+  let [selected, setSelected] = useState('description');
   let [isCollapsed, setIsCollapsed] = useState(true);
 
   const toggleIsCollapsed = () => {
@@ -28,14 +28,33 @@ const TabbedInfo = ({ hotelObj }) => {
   return (
     <section className='tabbedInfo'>
       <div className='tabs'>
-        <h3 className='tab selected'>DESCRIPTION</h3>
-        <h3 className='tab'>DETAILS</h3>
-        <h3 className='tab'>LOCATION</h3>
+        <h3
+          className={`tab ${selected === 'description' ? 'selected' : ''}`}
+          onClick={() => setSelected('description')}
+        >
+          DESCRIPTION
+        </h3>
+        <h3
+          className={`tab ${selected === 'details' ? 'selected' : ''}`}
+          onClick={() => setSelected('details')}
+        >
+          DETAILS
+        </h3>
+        <h3
+          className={`tab ${selected === 'location' ? 'selected' : ''}`}
+          onClick={() => setSelected('location')}
+        >
+          LOCATION
+        </h3>
       </div>
-      <main className={`main ${isCollapsed ? 'collapsed' : 'expanded'}`}>{makeMain()}</main>
-      <button className='toggle' onClick={toggleIsCollapsed}>
-        {makeToggleText()}
-      </button>
+      <main className={`main ${isCollapsed ? 'collapsed' : 'expanded'}`}>
+        {makeMain()}
+      </main>
+      {selected !== 'location' && (
+        <button className='toggle' onClick={toggleIsCollapsed}>
+          {makeToggleText()}
+        </button>
+      )}
     </section>
   );
 };

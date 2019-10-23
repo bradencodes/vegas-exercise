@@ -496,7 +496,7 @@ button {
   word-wrap: break-word;
 }
 .hotelInfo .tabbedInfo .collapsed {
-  height: 200px;
+  max-height: 200px;
 }
 .hotelInfo .tabbedInfo .toggle {
   display: flex;
