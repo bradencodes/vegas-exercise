@@ -22,6 +22,18 @@ const TabbedInfo = ({ hotelObj }) => {
           ))}
         </>
       );
+    } else {
+      const hotelMapUrl = hotelObj.media.filter(
+        asset => asset.type === 'productMap'
+      )[0].href;
+      const { address, city, state, postalCode } = hotelObj.location;
+      const completeAddress = `${address}, ${city}, ${state} ${postalCode}`;
+      return (
+        <>
+          <span className='address'>{completeAddress}</span>
+          <img className='hotelMap' src={hotelMapUrl} alt='hotel_map' />
+        </>
+      );
     }
   };
 
@@ -57,7 +69,11 @@ const TabbedInfo = ({ hotelObj }) => {
           LOCATION
         </h3>
       </div>
-      <main className={`main ${isCollapsed ? 'collapsed' : 'expanded'}`}>
+      <main
+        className={`main ${
+          isCollapsed && selected !== 'location' ? 'collapsed' : 'expanded'
+        }`}
+      >
         {makeMain()}
       </main>
       {selected !== 'location' && (

@@ -26,7 +26,7 @@ const HotelDetails = ({ hotelName, allHotelsObj }) => {
     <div>
       <button id='navBack'>SEE ALL LAS VEGAS HOTELS</button>
       <div className='pageContainer'>
-        <img src={hotelImageUrl} alt={hotelImageUrl} className='skeleton' />
+        <img src={hotelImageUrl} alt='hotel_image' className='skeleton' />
         <HotelsList allHotelsObj={allHotelsObj} />
         <HotelInfo hotelObj={hotelObj} />
       </div>

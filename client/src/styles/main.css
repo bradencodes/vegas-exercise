@@ -505,6 +505,17 @@ button {
 .hotelInfo .tabbedInfo .main dl dd {
   margin: 0;
 }
+.hotelInfo .tabbedInfo .main .address {
+  font-size: 2rem;
+}
+.hotelInfo .tabbedInfo .main .address::before {
+  content: '\2352';
+  font-family: 'vegasIcons';
+  margin: 0 10px 0 3px;
+}
+.hotelInfo .tabbedInfo .main .hotelMap {
+  margin-top: 13px;
+}
 .hotelInfo .tabbedInfo .collapsed {
   max-height: 200px;
 }
