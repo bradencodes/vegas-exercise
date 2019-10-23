@@ -1,6 +1,7 @@
 import React from 'react';
 
 import QuickInfo from './QuickInfo';
+import TabbedInfo from './TabbedInfo';
 
 const HotelInfo = ({ hotelObj }) => {
   return (
@@ -10,6 +11,7 @@ const HotelInfo = ({ hotelObj }) => {
       ) : (
         <div className='hotelInfo'>
           <QuickInfo hotelObj={hotelObj} />
+          <TabbedInfo hotelObj={hotelObj} />
         </div>
       )}
     </>

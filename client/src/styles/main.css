@@ -448,3 +448,65 @@ button {
   margin: 3px 0 0 0;
   font-size: 1.6rem;
 }
+.hotelInfo .tabbedInfo {
+  width: 677px;
+  height: 60px;
+  background-color: #895e95;
+  margin-top: 42px;
+}
+.hotelInfo .tabbedInfo .tabs {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.hotelInfo .tabbedInfo .tabs .tab {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0 65px;
+  height: 100%;
+  color: #ffffff;
+  opacity: 0.5;
+  font-weight: 400;
+  font-size: 2rem;
+  border-bottom: #895e95 4px solid;
+  cursor: pointer;
+}
+.hotelInfo .tabbedInfo .tabs .selected {
+  border-bottom: #733080 4px solid;
+  opacity: 0.95;
+}
+.hotelInfo .tabbedInfo .main {
+  width: 100%;
+  margin-top: 18px;
+  padding: 0 18px 0;
+  overflow: hidden;
+  color: #000000;
+  font-size: 1.62rem;
+  font-family: default;
+}
+.hotelInfo .tabbedInfo .main p {
+  margin: 0;
+  line-height: 1.4;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
+.hotelInfo .tabbedInfo .collapsed {
+  height: 200px;
+}
+.hotelInfo .tabbedInfo .toggle {
+  margin: 14px 18px;
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  color: #895e95;
+  font-size: 1.76rem;
+}
+.hotelInfo .tabbedInfo .toggle::after {
+  content: '\2193';
+  font-family: 'vegasIcons';
+}

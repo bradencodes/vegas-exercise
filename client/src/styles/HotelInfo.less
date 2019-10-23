@@ -7,7 +7,7 @@
     grid-template:
       'name price' auto
       'info price' auto /
-      auto  auto;
+      auto auto;
 
     .name {
       grid-area: name;
@@ -61,6 +61,77 @@
       .label {
         margin: 3px 0 0 0;
         font-size: 1.6rem;
+      }
+    }
+  }
+
+  .tabbedInfo {
+    width: 677px;
+    height: 60px;
+    background-color: @primary;
+    margin-top: 42px;
+
+    .tabs {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+
+      .tab {
+        display: flex;
+        align-items: center;
+        margin: 0;
+        padding: 0 65px;
+        height: 100%;
+        color: @white;
+        opacity: 0.5;
+        font-weight: 400;
+        font-size: 2rem;
+        border-bottom: @purple 4px solid;
+        cursor: pointer;
+      }
+
+      .selected {
+        border-bottom: @dark-purple 4px solid;
+        opacity: 0.95;
+      }
+    }
+
+    .main {
+      width: 100%;
+      margin-top: 18px;
+      padding: 0 18px 0;
+      overflow: hidden;
+      color: @black;
+      font-size: 1.62rem;
+      font-family: default;
+
+      p {
+        margin: 0;
+        line-height: 1.4;
+        white-space: pre-wrap;
+        white-space: -moz-pre-wrap;
+        white-space: -pre-wrap;
+        white-space: -o-pre-wrap;
+        word-wrap: break-word;
+      }
+    }
+
+    .collapsed {
+      height: 200px;
+    }
+
+    .toggle {
+      margin: 14px 18px;
+      padding: 0;
+      background-color: transparent;
+      border: 0;
+      color: @primary;
+      font-size: 1.76rem;
+
+      &::after {
+        content: '\2193';
+        font-family: 'vegasIcons';
       }
     }
   }
