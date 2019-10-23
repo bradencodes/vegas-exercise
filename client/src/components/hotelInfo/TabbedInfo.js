@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
-const TabbedInfo = ({ hotelObj }) => {
-  let [selected, setSelected] = useState('description');
+const TabbedInfo = ({ hotelObj, selected, setSelected }) => {
   let [isCollapsed, setIsCollapsed] = useState(true);
 
   const toggleIsCollapsed = () => {

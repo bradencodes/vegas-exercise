@@ -1,6 +1,6 @@
 import React from 'react';
 
-const QuickInfo = ({ hotelObj }) => {
+const QuickInfo = ({ hotelObj, setSelected }) => {
   const generateStars = num => {
     let stars = '';
     for (let i = 0; i < num; i++) {
@@ -16,7 +16,12 @@ const QuickInfo = ({ hotelObj }) => {
       </h1>
 
       <aside className='info'>
-        <p className='item' data-icon='&#x2352;'>
+        <p
+          className='item'
+          data-icon='&#x2352;'
+          onClick={() => setSelected('location')}
+          style={{ cursor: 'pointer' }}
+        >
           {hotelObj.location.areaName}
         </p>
         <p className='item' data-icon='&#x2706;'>
